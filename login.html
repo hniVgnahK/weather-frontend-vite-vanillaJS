@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WeatherDash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: { colors: { primary: "#137fec", "surface-dark": "#1c252e" } }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 dark:bg-[#101922] min-h-screen flex items-center justify-center p-4 font-sans">
+
+<div class="max-w-md w-full bg-white dark:bg-surface-dark rounded-2xl shadow-xl p-8 border border-slate-200 dark:border-slate-800">
+    <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">WeatherDash</h2>
+        <p class="text-slate-500 dark:text-slate-400 mt-2">Đăng nhập để vào bảng điều khiển</p>
+    </div>
+
+    <form id="loginForm" class="space-y-6">
+        <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Email</label>
+            <input type="email" id="email" required class="w-full rounded-xl border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-3 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary outline-none transition-all">
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Mật khẩu</label>
+            <input type="password" id="password" required class="w-full rounded-xl border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-3 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary outline-none transition-all">
+        </div>
+
+        <p id="errorMsg" class="text-red-500 text-sm hidden text-center font-medium">Sai email hoặc mật khẩu!</p>
+
+        <button type="submit" class="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 rounded-xl transition-colors shadow-lg shadow-primary/30">
+            Đăng Nhập
+        </button>
+    </form>
+</div>
+
+<script type="module" src="/src/login.js"></script>
+</body>
+</html>
